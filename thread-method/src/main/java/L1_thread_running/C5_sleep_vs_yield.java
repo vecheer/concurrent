@@ -1,7 +1,6 @@
-package L2_thread_running;
+package L1_thread_running;
 
 import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
