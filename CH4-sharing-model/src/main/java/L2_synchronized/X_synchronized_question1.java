@@ -24,7 +24,7 @@ class CountHolder {
     }
 }
 
-public class X_synchronized_question {
+public class X_synchronized_question1 {
 
     static final CountHolder holder = new CountHolder();
 
