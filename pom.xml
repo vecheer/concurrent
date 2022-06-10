@@ -19,7 +19,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -27,6 +27,13 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+        <!-- 如果需要使用 lombok 中的 @Slf4j 还需要引入 slf4j 的api模块 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
 
         <dependency>
             <groupId>log4j</groupId>
@@ -47,7 +54,7 @@
         </dependency>
 
 
-
     </dependencies>
+
 
 </project>
