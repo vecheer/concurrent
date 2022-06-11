@@ -1,4 +1,4 @@
-package L3_good_question;
+package L3_classic_question;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package L3_good_question;
+package L3_classic_question;
 
 import java.util.Random;
 
