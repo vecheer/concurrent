@@ -14,30 +14,46 @@ import java.util.concurrent.TimeUnit;
  * @date 2022/6/11 12:37
  */
 @Data
-@AllArgsConstructor
 class Lock{
-    String usage;
+    String usage = "for test";
+
+    public Lock(String usage) {
+        this.usage = usage;
+    }
+
+    public Lock() {
+        this.usage = usage;
+    }
 }
 
 public class C1_markword {
     public static void main(String[] args) {
         Lock lock = new Lock("测试加锁");
-        System.out.println("[未加锁之前的 lock 对象布局: ] ");
+        lock.hashCode();
+
+//        System.out.println("[未加锁之前的 lock 对象布局: ] ");
+        System.out.println("[初始状态下, 对象内存布局: ] ");
+        System.out.println(ClassLayout.parseInstance(lock).toPrintable());
+
+        sleep(3000);
+
+        System.out.println("[3秒后, 对象内存布局: ] ");
         System.out.println(ClassLayout.parseInstance(lock).toPrintable());
 
         new Thread(()->{
             synchronized (lock){
-                sleep(10);
                 System.out.println("------------------------------------------------------");
-                System.out.println("[t1 get the lock, Lock Obj is like: ]");
+//                System.out.println("[t1 get the lock, Lock Obj is like: ]");
                 System.out.println(ClassLayout.parseInstance(lock).toPrintable());
+                sleep(1000);
             }
         },"t1").start();
 
+        sleep(1);
 
         new Thread(()->{
             synchronized (lock){
-                sleep(10);
+                sleep(100);
                 System.out.println("------------------------------------------------------");
                 System.out.println("[t2 get the lock, Lock Obj is like: ]");
                 System.out.println(ClassLayout.parseInstance(lock).toPrintable());
