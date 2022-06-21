@@ -13,5 +13,8 @@
         <module name="CH3-thread-state" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Utils-Module" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
