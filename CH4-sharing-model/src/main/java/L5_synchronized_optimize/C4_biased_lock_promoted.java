@@ -1,6 +1,6 @@
-package L4_java_markword;
+package L5_synchronized_optimize;
 
-import com.vec.concurrent.Timer;
+import utils.Timer;
 import org.openjdk.jol.info.ClassLayout;
 
 /**
@@ -16,6 +16,12 @@ public class C4_biased_lock_promoted {
         System.out.println("[初始态，锁对象的布局:] ");
         System.out.println(ClassLayout.parseInstance(lock).toPrintable());
 
+
+        synchronized (lock){
+            System.out.println("[main线程首次获取锁时，锁对象的布局:] ");
+            System.out.println(ClassLayout.parseInstance(lock).toPrintable());
+        }
+
         new Thread(()->{
             synchronized (lock){
                 System.out.println("[t1线程竞争锁时，锁对象的布局:] ");
@@ -25,10 +31,10 @@ public class C4_biased_lock_promoted {
         },"t1").start();
 
         Timer.sleep(3000);
+
         synchronized (lock){
-            System.out.println("[main线程首次获取锁时，锁对象的布局:] ");
+            System.out.println("[main线程再次获取锁时，锁对象的布局:] ");
             System.out.println(ClassLayout.parseInstance(lock).toPrintable());
         }
-
     }
 }

@@ -5,7 +5,7 @@ package L1_question;
  * @version 1.0
  * @date 2022/6/5 20:01
  */
-public class C1_sharing_question {
+public class C1_synchronized_question {
 
     static int count = 0;
 
