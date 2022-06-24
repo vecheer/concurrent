@@ -1,4 +1,4 @@
-package M1_design_mode;
+package M_design_mode;
 
 import lombok.extern.log4j.Log4j;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2022/6/3 10:12
  */
 @Log4j
-public class L1_two_phase_stop {
+public class Two_Phase_Stop {
     public static void main(String[] args) throws InterruptedException {
         Watcher watcher = new Watcher();
         watcher.start();

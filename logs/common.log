@@ -1,29 +1,145 @@
-2022-06-03 11:22:52  [Thread-0] - [INFO]  ===================== 监控线程开始运行! =====================
-2022-06-03 11:22:52  [Thread-0] - [INFO]  watching......
-2022-06-03 11:22:58  [Thread-0] - [INFO]  watching......
-2022-06-03 11:23:02  [Thread-0] - [INFO]  收到打断通知, 现在开始料理后事
-2022-06-03 11:23:02  [Thread-0] - [INFO]  ======================= 下面开始料理后事
-2022-06-03 11:23:05  [Thread-0] - [INFO]  ==================== 完毕! 现在可以停机了!
-2022-06-03 11:23:05  [Thread-0] - [INFO]  ===================== 监控线程运行结束!数据如下 =====================
-2022-06-03 11:23:05  [Thread-0] - [INFO]  watchData ===>2
-2022-06-03 11:24:47  [Thread-0] - [INFO]  ===================== 监控线程开始运行! =====================
-2022-06-03 11:24:47  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 11:24:53  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 11:24:59  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 11:25:05  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 11:25:07  [Thread-0] - [INFO]  [运行中...]收到打断通知, 现在开始料理后事
-2022-06-03 11:25:07  [Thread-0] - [INFO]  [停机中...] 下面开始料理后事
-2022-06-03 11:25:10  [Thread-0] - [INFO]  [停机结束] 完毕! 现在可以停机了!
-2022-06-03 11:25:10  [Thread-0] - [INFO]  ===================== 监控线程运行结束!数据如下 =====================
-2022-06-03 11:25:10  [Thread-0] - [INFO]  watchData ===> 4
-2022-06-03 12:17:52  [Thread-0] - [INFO]  ===================== 监控线程开始运行! =====================
-2022-06-03 12:17:52  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 12:17:58  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 12:18:04  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 12:18:10  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 12:18:16  [Thread-0] - [INFO]  [运行中...]watching......
-2022-06-03 12:18:22  [Thread-0] - [INFO]  [运行中...]收到打断通知, 现在开始料理后事
-2022-06-03 12:18:22  [Thread-0] - [INFO]  [停机中...] 下面开始料理后事
-2022-06-03 12:18:22  [Thread-0] - [INFO]  [停机结束] 完毕! 现在可以停机了!
-2022-06-03 12:18:22  [Thread-0] - [INFO]  ===================== 监控线程运行结束!数据如下 =====================
-2022-06-03 12:18:22  [Thread-0] - [INFO]  watchData ===> 5
+2022-06-23 15:35:51 [INFO]-[M_design_mode.M1_Protected_Pause_Mode] 我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 15:35:51 [INFO]-[M_design_mode.M1_Protected_Pause_Mode] 我是消费者，我现在需要等待生产者的结果
+2022-06-23 15:35:51 [INFO]-[M_design_mode.M1_Protected_Pause_Mode] 我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 15:35:51 [INFO]-[M_design_mode.M1_Protected_Pause_Mode] 我是消费者，我现在已经知道结果了，再见
+2022-06-23 15:36:30 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是消费者，我现在需要等待生产者的结果
+2022-06-23 15:36:30 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 15:36:30 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 15:36:30 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是消费者，我现在已经知道结果了，再见
+2022-06-23 15:36:55 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 15:36:55 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 15:36:55 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [consumer] 我是消费者，我现在需要等待生产者的结果
+2022-06-23 15:36:55 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [consumer] 我是消费者，我现在已经知道结果了，再见
+2022-06-23 15:37:15 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [consumer] 我是消费者，我现在需要等待生产者的结果
+2022-06-23 15:37:18 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 15:37:18 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [producer] 我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 15:37:18 [INFO] - [M_design_mode.M1_Protected_Pause_Mode] - [consumer] 我是消费者，我现在已经知道结果了，再见
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [Jack] 我是Jack，我点的是Jack_Food_hamburgers
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [Jack] 我是Jack，我现在在等我的外卖到
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [Tommy_Food_rice] 我是Tommy，我点的是Tommy_Food_rice
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [Tommy_Food_rice] 我是Tommy，我现在在等我的外卖到
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [FoodSeller] 我是外卖员，来送外卖了，赶紧下来拿饭!
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [FoodSeller] 我现在送的是Jack的米饭 Jack_Food_hamburgers
+2022-06-23 15:37:44 [ERROR] - [L6_wait_notify.C7_wait_notify_test] - [Tommy_Food_rice] 我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？
+2022-06-23 15:37:44 [INFO] - [L6_wait_notify.C7_wait_notify_test] - [Jack] 我是Jack，外卖到啦！下去拿外卖！
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我点的是Jack_Food_hamburgers
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我现在在等我的外卖到
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我点的是Tommy_Food_rice
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我现在在等我的外卖到
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我是外卖员，来送外卖了，赶紧下来拿饭!
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我现在送的是Jack的米饭 Jack_Food_hamburgers
+2022-06-23 15:40:00	[ERROR]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？
+2022-06-23 15:40:00	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，外卖到啦！下去拿外卖！
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我点的是Jack_Food_hamburgers	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我现在在等我的外卖到	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我点的是Tommy_Food_rice	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我现在在等我的外卖到	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我是外卖员，来送外卖了，赶紧下来拿饭!	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我现在送的是Jack的米饭 Jack_Food_hamburgers	
+2022-06-23 15:40:45	[ERROR]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy_Food_rice]	我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？	
+2022-06-23 15:40:45	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，外卖到啦！下去拿外卖！	
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我点的是Jack_Food_hamburgers
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，我现在在等我的外卖到
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]	我是Tommy，我点的是Tommy_Food_rice
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]	我是Tommy，我现在在等我的外卖到
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我是外卖员，来送外卖了，赶紧下来拿饭!
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]	我现在送的是Jack的米饭 Jack_Food_hamburgers
+2022-06-23 15:42:47	[ERROR]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]	我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？
+2022-06-23 15:42:47	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]	我是Jack，外卖到啦！下去拿外卖！
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]		我是Jack，我点的是Jack_Food_hamburgers
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]		我是Jack，我现在在等我的外卖到
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]		我是Tommy，我点的是Tommy_Food_rice
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]		我是Tommy，我现在在等我的外卖到
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]		我是外卖员，来送外卖了，赶紧下来拿饭!
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]		我现在送的是Jack的米饭 Jack_Food_hamburgers
+2022-06-23 15:43:11	[ERROR]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]		我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？
+2022-06-23 15:43:11	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]		我是Jack，外卖到啦！下去拿外卖！
+2022-06-23 15:43:23	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]			我是Jack，我点的是Jack_Food_hamburgers
+2022-06-23 15:43:23	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]			我是Jack，我现在在等我的外卖到
+2022-06-23 15:43:23	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]			我是Tommy，我点的是Tommy_Food_rice
+2022-06-23 15:43:23	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]			我是Tommy，我现在在等我的外卖到
+2022-06-23 15:43:24	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]			我是外卖员，来送外卖了，赶紧下来拿饭!
+2022-06-23 15:43:24	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[FoodSeller]			我现在送的是Jack的米饭 Jack_Food_hamburgers
+2022-06-23 15:43:24	[ERROR]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Tommy]			我是Tommy，我的外卖没到，谁把我喊过来拿外卖的？
+2022-06-23 15:43:24	[INFO]	-	[L6_wait_notify.C7_wait_notify_test]	-	[Jack]			我是Jack，外卖到啦！下去拿外卖！
+2022-06-23 17:22:31	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 17:22:36	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 17:22:36	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 17:24:07	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 17:24:15	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 17:24:20	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 17:24:20	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 17:24:27	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 17:25:40	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 17:25:40	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:10:35	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:10:40	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:10:40	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:11:37	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:11:42	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:11:42	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:11:42	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在已经知道结果了，再见
+2022-06-23 20:12:08	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:12:11	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-23 20:12:13	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:12:13	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:28:09	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:28:12	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-23 20:28:15	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:28:15	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:29:29	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:29:37	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:29:37	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:29:37	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在已经知道结果了，再见
+2022-06-23 20:31:54	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:32:02	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:32:04	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-23 20:32:10	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:33:32	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:33:42	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-23 20:51:13	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:51:13	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:51:21	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在虚假唤醒一波!
+2022-06-23 20:51:21	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在要真的唤醒了！
+2022-06-23 20:51:21	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:51:31	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-23 20:53:21	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:53:21	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:53:29	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在虚假唤醒一波!
+2022-06-23 20:53:29	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在要真的唤醒了！
+2022-06-23 20:53:29	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在已经把结果交给了同步变量
+2022-06-23 20:53:29	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在已经知道结果了，再见
+2022-06-23 20:55:26	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我现在需要等待生产者的结果
+2022-06-23 20:55:26	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在需要告诉消费者，我的运行结果
+2022-06-23 20:55:34	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[producer]			我是生产者，我现在虚假唤醒一波!
+2022-06-23 20:55:44	[INFO]	-	[M_design_mode.M1_Protected_Pause_Mode_optimize]	-	[consumer]			我是消费者，我等不及了，再见!!!
+2022-06-24 15:18:33	[INFO]	-	[utils.Test]	-	[Thread-0]			ok，我现在开始睡眠!
+2022-06-24 15:18:34	[INFO]	-	[utils.Test]	-	[Thread-1]			我已经调用notify了嗷
+2022-06-24 16:40:54	[INFO]	-	[utils.Test]	-	[Thread-0]			ok，我现在开始睡眠!
+2022-06-24 16:40:55	[INFO]	-	[utils.Test]	-	[Thread-1]			我已经调用notify了嗷
+2022-06-24 16:41:18	[INFO]	-	[utils.Test]	-	[Thread-0]			ok，我现在开始睡眠!
+2022-06-24 16:41:19	[INFO]	-	[utils.Test]	-	[Thread-1]			我已经调用notify了嗷
+2022-06-24 16:41:31	[INFO]	-	[utils.Test]	-	[Thread-0]			我被唤醒啦
+2022-06-24 16:51:49	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费的结果是: M_design_mode.M2_Producer_Consumer_Mode$Message@42f73111
+2022-06-24 16:51:49	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费的结果是: M_design_mode.M2_Producer_Consumer_Mode$Message@44c091ed
+2022-06-24 16:52:30	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=e8309e38-ca55-42e8-b2f5-fff0f2b71cad, content=hello 64e70d11-9486-4bba-9e76-438516e8eb69)
+2022-06-24 16:52:30	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=081d4663-c62b-4ce3-8489-09175babf962, content=hello 0c7edf8b-2617-496f-aa43-27ed4781aeb3)
+2022-06-24 16:57:02	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=319c7895-be62-4a2d-ba2a-968eaae72d3d, content=hello 2)
+2022-06-24 16:57:02	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=271fc281-d517-4e3b-abd8-1f68483c7c98, content=hello 0)
+2022-06-24 17:14:29	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			队列为空，消费者等待
+2022-06-24 17:14:29	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			队列为空，消费者等待
+2022-06-24 17:14:29	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=3dd271ea-26d8-49f3-985d-e5a67f7fdf7e, content=hello 2)
+2022-06-24 17:14:29	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=790a4ad3-bd37-40e5-9591-da91fa88c34d, content=hello 3)
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			队列为空，消费者等待
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			队列为空，消费者等待
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[provider-1]			队列满了，生产者等待
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=38cf9a96-5726-49ef-868f-df5a0cca1daf, content=hello 4)
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[provider-2]			队列满了，生产者等待
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费的结果是: M2_Producer_Consumer_Mode.Message(id=adac8d2b-4ed0-47ba-8190-eef41553a1f4, content=hello 5)
+2022-06-24 17:16:28	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[provider-0]			队列满了，生产者等待
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			队列为空，消费者等待
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			队列为空，消费者等待
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-0]			消费者来消费了!消费的结果是: 336bead0-6734-4022-a4b9-f54cd96958f1
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[provider-4]			队列满了，生产者等待
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[consumer-1]			消费者来消费了!消费的结果是: 4f05e995-ead7-45b9-ab85-c0b2ba42ab49
+2022-06-24 17:17:01	[INFO]	-	[M_design_mode.M2_Producer_Consumer_Mode]	-	[provider-1]			队列满了，生产者等待
