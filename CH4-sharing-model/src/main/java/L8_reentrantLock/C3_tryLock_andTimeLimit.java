@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2022/6/27 0:03
  */
 @Log4j
-public class C3_tryLock_andWait {
+public class C3_tryLock_andTimeLimit {
     static ReentrantLock reentrantLock = new ReentrantLock();
 
     public static void main(String[] args) {

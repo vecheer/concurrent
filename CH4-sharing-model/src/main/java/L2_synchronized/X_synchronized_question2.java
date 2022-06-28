@@ -1,5 +1,7 @@
 package L2_synchronized;
 
+import utils.Timer;
+
 /**
  * @author yq
  * @version 1.0
@@ -28,7 +30,7 @@ public class X_synchronized_question2 {
     void func11() {
         synchronized (this) {
             // 方法体
-
+            Timer.SECOND.sleep(100);
         }
     }
 
