@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CH2-thread-method" />
+        <module name="CH6-no-lock" />
         <module name="CH5-JMM" />
         <module name="CH1-starter" />
         <module name="CH4-sharing-model" />
-        <module name="D-design-mode" />
         <module name="CH3-thread-state" />
+        <module name="CH2-thread-method" />
+        <module name="D-design-mode" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

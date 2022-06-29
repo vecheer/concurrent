@@ -15,6 +15,7 @@
         <module>CH4-sharing-model</module>
         <module>CH5-JMM</module>
         <module>D-design-mode</module>
+        <module>CH6-no-lock</module>
     </modules>
 
     <properties>

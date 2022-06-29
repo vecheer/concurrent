@@ -1,15 +1,14 @@
 package L1_volatile;
 
-public class C2_singleton_mode_DCL_problem {
+
+public final class C2_singleton_mode_DCL_problem {
 
     public static void main(String[] args) {
-
     }
-
 
     static class Singleton {
 
-        private static Singleton INSTANCE;
+        private static volatile Singleton INSTANCE;
 
         private Singleton() {
             if (INSTANCE != null) {
