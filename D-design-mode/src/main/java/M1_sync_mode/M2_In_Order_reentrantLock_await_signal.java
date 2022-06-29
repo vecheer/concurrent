@@ -1,4 +1,4 @@
-package M_design_mode;
+package M1_sync_mode;
 
 
 import lombok.extern.log4j.Log4j;
@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 @Log4j
-public class M3_In_Order_reentrantLock_await_signal {
+public class M2_In_Order_reentrantLock_await_signal {
 
     static final ReentrantLock lock = new ReentrantLock();
     static final Condition couldPrintA = lock.newCondition();

@@ -1,4 +1,4 @@
-package M_design_mode;
+package M2_async_mode;
 
 
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.LinkedList;
  * 从业务的角度出发，生产和消费应该在不同端，防止消息被堆积
  */
 @Log4j
-public class M2_Producer_Consumer_Mode {
+public class M1_Producer_Consumer_Mode {
 
 
     // 消息

@@ -8,13 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CH2-thread-method" />
+        <module name="CH5-JMM" />
         <module name="CH1-starter" />
         <module name="CH4-sharing-model" />
+        <module name="D-design-mode" />
         <module name="CH3-thread-state" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Utils-Module" target="8" />
+      <module name="X-design-mode" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

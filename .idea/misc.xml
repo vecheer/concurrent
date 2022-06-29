@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Utils-Module/pom.xml" />
+        <option value="$PROJECT_DIR$/X-design-mode/pom.xml" />
       </set>
     </option>
   </component>

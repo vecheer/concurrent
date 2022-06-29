@@ -13,6 +13,8 @@
         <module>CH2-thread-method</module>
         <module>CH3-thread-state</module>
         <module>CH4-sharing-model</module>
+        <module>CH5-JMM</module>
+        <module>D-design-mode</module>
     </modules>
 
     <properties>
