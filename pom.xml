@@ -16,6 +16,7 @@
         <module>CH5-JMM</module>
         <module>D-design-mode</module>
         <module>CH6-no-lock</module>
+        <module>CH7-unchanged-class</module>
     </modules>
 
     <properties>

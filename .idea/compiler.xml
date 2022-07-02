@@ -12,6 +12,7 @@
         <module name="CH1-starter" />
         <module name="CH4-sharing-model" />
         <module name="CH3-thread-state" />
+        <module name="CH7-unchanged-class" />
         <module name="CH2-thread-method" />
         <module name="D-design-mode" />
       </profile>
