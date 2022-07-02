@@ -12,15 +12,15 @@ public class C7_Atomic_LongAdder_add {
         watch.start();
 
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i < 500000000; i++) {
-                num.add(15);
+            for (int i = 0; i < 50000; i++) {
+                num.increment();
             }
         });
 
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i < 500000000; i++) {
-                num.add(-14);
+            for (int i = 0; i < 50000; i++) {
+                num.decrement();
             }
         });
 
