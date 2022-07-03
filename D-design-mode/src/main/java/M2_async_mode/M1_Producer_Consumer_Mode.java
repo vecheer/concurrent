@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j;
-import utils.Generator;
+import utils.data.Generator;
 
 import java.util.LinkedList;
 

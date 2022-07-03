@@ -1,0 +1,63 @@
+package utils;
+
+import L3_Unsafe.C2_Unsafe_MyAtomicInteger;
+import sun.misc.Unsafe;
+
+import java.lang.reflect.Field;
+
+class MyAtomicInteger{
+
+    private static Unsafe unsafe;
+    private static long intValueOffset; // the Value field of MyAtomicInteger class mode
+
+
+    // reflect to get the Unsafe instance
+    static {
+        Field field;
+        try {
+            field = Unsafe.class.getDeclaredField("theUnsafe");
+            field.setAccessible(true);
+
+            unsafe = (Unsafe) field.get(null);
+            intValueOffset = unsafe.objectFieldOffset(MyAtomicInteger.class.getDeclaredField("value"));
+        } catch (NoSuchFieldException | IllegalAccessException  ignored) {
+        }
+    }
+
+    private volatile int value;
+
+    public MyAtomicInteger(int value) {
+        this.value = value;
+    }
+
+    public int get() {
+        return value;
+    }
+
+    public int getAndIncrement(){
+        int valueCached = value;
+        int lastValue;
+        while (!unsafe.compareAndSwapInt(this,intValueOffset,(lastValue=value),lastValue+1)){}
+        return valueCached;
+    }
+
+    public int incrementAndGet (){
+        int lastValue;
+        while (!unsafe.compareAndSwapInt(this,intValueOffset,(lastValue=value),lastValue+1)){}
+        return lastValue+1;
+    }
+
+    public int getAndDecrement(){
+        int valueCached = value;
+        int lastValue;
+        while (!unsafe.compareAndSwapInt(this,intValueOffset,(lastValue=value),lastValue-1)){}
+        return valueCached;
+    }
+
+    public int decrementAndGet(){
+        int lastValue;
+        while (!unsafe.compareAndSwapInt(this,intValueOffset,(lastValue=value),lastValue-1)){}
+        return lastValue-1;
+    }
+
+}

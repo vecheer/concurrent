@@ -1,7 +1,7 @@
 package M1_sync_mode;
 
 import lombok.extern.log4j.Log4j;
-import utils.Timer;
+import utils.time.Timer;
 
 @Log4j
 public class M1_Protected_Pause_Mode {

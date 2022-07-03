@@ -2,7 +2,7 @@ package M1_sync_mode;
 
 
 import lombok.extern.log4j.Log4j;
-import utils.Timer;
+import utils.time.Timer;
 
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
