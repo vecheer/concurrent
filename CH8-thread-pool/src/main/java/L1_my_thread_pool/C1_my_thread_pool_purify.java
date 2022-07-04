@@ -2,7 +2,6 @@ package L1_my_thread_pool;
 
 import com.sun.istack.internal.NotNull;
 import lombok.extern.log4j.Log4j;
-import utils.data.Generator;
 import utils.time.Timer;
 
 import java.util.ArrayDeque;
@@ -14,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 
 @Log4j
-public class C1_my_thread_pool {
+public class C1_my_thread_pool_purify {
     public static void main(String[] args) {
         MyThreadPool threadPool = new MyThreadPool(3,2,8);
         for (int i = 0; i < 20; i++) {
@@ -31,19 +30,15 @@ public class C1_my_thread_pool {
     // 阻塞队列： 专门存放线程任务，可以存、取任务
     ///////////////////////////////////////////////////////////////////////////
     static class BlockingQueue<T> {
-        /* P1 数据结构 ***************************************************************** */
         // 1. 任务队列
-        // 存储任务，是一个双向表，因为任务的执行是FIFO的
         private final Deque<T> taskQueue = new ArrayDeque<>();
         // 容量上限
         private int capacity;
 
         // 2. 锁
-        // 控制线程并发放、取任务
         private final ReentrantLock queueLock = new ReentrantLock();
 
         // 3.条件变量
-        // 为生产者、消费者各定义一个等待条件
         private final Condition fullCondition = queueLock.newCondition();
         private final Condition emptyCondition = queueLock.newCondition();
 
@@ -52,24 +47,6 @@ public class C1_my_thread_pool {
             this.capacity = capacity;
         }
 
-        /* P2 功能 ***************************************************************** */
-        // 1.存任务
-        public void putTask(T task) {
-            try {
-                queueLock.lock();
-                // 阻塞添加，为了防止虚假唤醒，加了while(true)
-                while (taskQueue.size() == capacity) {
-                    log.info("当前任务池已满! 正在等待核心线程执行完毕，来取走任务!");
-                    fullCondition.await();
-                }
-                taskQueue.addLast(task);
-                emptyCondition.signal();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                queueLock.unlock();
-            }
-        }
 
         // 1.存任务(当任务队列满时，一定时间内存入失败，则放弃存入任务)
         public boolean putTaskTimed(T task,long timeout, TimeUnit unit) {
@@ -94,50 +71,6 @@ public class C1_my_thread_pool {
                 queueLock.unlock();
             }
         }
-
-
-        // 2.取任务
-        public T takeTask() {
-            try {
-                queueLock.lock();
-                // 阻塞取，为了防止虚假唤醒，加了while(true)
-                while (taskQueue.isEmpty()) {
-                    emptyCondition.await();
-                }
-                fullCondition.signal();
-                return taskQueue.removeFirst();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                return null;
-            } finally {
-                queueLock.unlock();
-            }
-        }
-
- /*       // 2.取任务(带有超时限制——版本1 手工计时)
-        public T takeTask(long timeout, TimeUnit unit) {
-            long millis = unit.toMillis(timeout);
-            long timeRemain = millis;
-            long startedTime;
-            try {
-                queueLock.lock();
-                while (taskQueue.isEmpty()) {
-                    // 保证虚假唤醒后，还能按照剩下的时间接着等
-                    startedTime = System.currentTimeMillis();
-                    if (!emptyCondition.await(timeRemain, TimeUnit.MILLISECONDS)) {
-                        return null;
-                    }
-                    timeRemain = *//*剩余时间*//*timeRemain - *//*本次已等待的时间*//*(System.currentTimeMillis() - startedTime);
-                }
-                fullCondition.signal();
-                return taskQueue.removeFirst();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                return null;
-            } finally {
-                queueLock.unlock();
-            }
-        }*/
 
         // 2.取任务(带有超时限制 awaitNanos)
         public T takeTaskTimed(long timeout, TimeUnit unit) {
@@ -167,7 +100,6 @@ public class C1_my_thread_pool {
             }
         }
 
-        /* P3 内部方法 ***************************************************************** */
 
     }
 
@@ -176,22 +108,21 @@ public class C1_my_thread_pool {
     // 线程池
     // 线程池在功能上，就是不停的从任务队列中取任务来执行，如果当前所有的线程都在运行
     ///////////////////////////////////////////////////////////////////////////
+
     static class MyThreadPool {
-        /* P1 数据结构 ************************************************** */
-        // 1.任务集合
+        // 1.任务队列
         private BlockingQueue<Runnable> taskQueue;
 
         // 2.工作线程集合
         private final HashSet<Worker> workers = new HashSet<>();
-        // 核心线程数(可以真正同时并发执行的线程, 有超出该数目的任务, 就需要放入阻塞队列)
-        // 核心线程数是一直在运行的线程，他们负责从阻塞队列中取出Runnable类型的task，来执行
+
+        // 3.工作线程数目
         private int coreSize;
 
-        // 3.空闲线程存活时间
-        // 单个线程在 timeout 时间内，没有任务，则线程回收
+        // 4.空闲线程最大存活时间
         private long timeout;
 
-        // 4.任务最大等待时间(************  ***********)
+        // 5.任务最大等待时间(************  ***********)
         private long maxWaitingTime;
 
         // 工作线程数、超时时间、最大任务数、任务最大等待时间
@@ -203,26 +134,33 @@ public class C1_my_thread_pool {
             this.taskQueue = new BlockingQueue<>(maxTaskNum);
         }
 
-        /* P1 功能 ************************************************** */
-        // 1.任务执行
-        // 外部调用该方法，来让线程池执行任务，本质就是将任务(runnable)放入任务池
-        // 将任务放入任务池，从任务池中取任务都设置有超时时间
+
+
+
+        // 执行任务
         public void execute(Runnable task) {
-            // 并发状态下，对于worker.add();worker.size()调用都是线程不安全的
+
             synchronized (workers) {
-                // 当前没有空
                 if (workers.size() < coreSize) {
-                    log.info("当前线程池比较空闲!先去创建线程!");
                     Worker worker = new Worker(task);
                     workers.add(worker);
                     worker.start();
                 } else {
-                    log.info("当前线程池比较繁忙，当前任务已放入阻塞队列");
-                    // 拒绝策略
-                    boolean putFlag = taskQueue.putTaskTimed(task, maxWaitingTime, TimeUnit.MILLISECONDS);
-
+                    boolean canExecute = taskQueue.putTaskTimed(task, maxWaitingTime, TimeUnit.MILLISECONDS);
+                    if (!canExecute) {
+                        rejectStrategy();
+                    }
                 }
             }
+        }
+
+
+
+
+
+
+        public void rejectStrategy(){
+
         }
 
         ////////////////////////////////////
