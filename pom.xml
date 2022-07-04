@@ -17,6 +17,7 @@
         <module>D-design-mode</module>
         <module>CH6-no-lock</module>
         <module>CH7-unchanged-class</module>
+        <module>CH8-thread-pool</module>
     </modules>
 
     <properties>

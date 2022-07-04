@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CH6-no-lock" />
+        <module name="CH8-thread-pool" />
         <module name="CH5-JMM" />
         <module name="CH1-starter" />
         <module name="CH4-sharing-model" />
