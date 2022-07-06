@@ -24,7 +24,7 @@ public class Timer {
             try {
                 TimeUnit.SECONDS.sleep(duration);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println("interrupted!");
             }
         }
     }
@@ -34,7 +34,7 @@ public class Timer {
             try {
                 TimeUnit.MILLISECONDS.sleep(duration);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println("interrupted!");
             }
         }
     }
@@ -44,7 +44,7 @@ public class Timer {
             try {
                 TimeUnit.NANOSECONDS.sleep(duration);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println("interrupted!");
             }
         }
     }
