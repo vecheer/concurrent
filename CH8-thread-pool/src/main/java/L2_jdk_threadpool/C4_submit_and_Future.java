@@ -22,7 +22,7 @@ public class C4_submit_and_Future {
             private final MyAtomicInteger prefixCounter = new MyAtomicInteger(0);
 
             @Override
-            public Thread newThread(@NotNull Runnable r) {
+            public Thread newThread( Runnable r) {
                 return new Thread(r,"putter-"+prefixCounter.incrementAndGet());
             }
         });
@@ -44,8 +44,9 @@ public class C4_submit_and_Future {
                     log.info("put user!");
                     return new User("YQ" );
                 };
+                log.info("submit task!");
                 Future<User> result = cachedThreadPool.submit(task);
-
+                log.info("result is: " + result);
 
                 try {
                     log.info("result is: " + result.get());

@@ -3,7 +3,6 @@ package L2_jdk_threadpool;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
-import org.jetbrains.annotations.NotNull;
 import utils.atomic.MyAtomicInteger;
 import utils.data.Generator;
 import utils.time.Timer;
@@ -25,7 +24,7 @@ public class C6_shutdown_shutdownNow_awaitTermination {
             private final MyAtomicInteger prefixCounter = new MyAtomicInteger(0);
 
             @Override
-            public Thread newThread(@NotNull Runnable r) {
+            public Thread newThread(Runnable r) {
                 return new Thread(r, "fixed-pool-" + prefixCounter.incrementAndGet());
             }
         });
