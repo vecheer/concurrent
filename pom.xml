@@ -18,6 +18,7 @@
         <module>CH6-no-lock</module>
         <module>CH7-unchanged-class</module>
         <module>CH8-thread-pool</module>
+        <module>CH9-JUC</module>
     </modules>
 
     <properties>
