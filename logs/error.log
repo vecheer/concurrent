@@ -198,3 +198,5 @@
 2022-07-05 20:20:03 [ERROR]	- [L1_my_thread_pool.C1_my_thread_pool_purify] - [main] java.lang.RuntimeException: server is busy! wait for a moment!!!
 2022-07-05 20:20:03 [ERROR]	- [L1_my_thread_pool.C1_my_thread_pool_purify] - [main] java.lang.RuntimeException: server is busy! wait for a moment!!!
 2022-07-05 20:20:03 [ERROR]	- [L1_my_thread_pool.C1_my_thread_pool_purify] - [main] java.lang.RuntimeException: server is busy! wait for a moment!!!
+2022-07-07 22:41:04 [ERROR]	- [L3_exception_handle_in_threadpool.C1_try_catch_inside_task] - [pool-1-thread-1] java.lang.ArithmeticException: / by zero
+2022-07-07 22:41:09 [ERROR]	- [L3_exception_handle_in_threadpool.C1_try_catch_inside_task] - [pool-1-thread-1] java.lang.ArithmeticException: / by zero
